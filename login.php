@@ -35,27 +35,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     <title>Iniciar Sesión</title>
 </head>
 <body>
-<div class="container mt-5">
-    <h2>Iniciar Sesión</h2>
-    <?php if (isset($error)): ?>
-        <div class="alert alert-danger"><?php echo $error; ?></div>
-    <?php endif; ?>
-    <form method="post">
-        <div class="mb-3">
-            <label for="usuario" class="form-label">Usuario:</label>
-            <input type="text" id="usuario" name="usuario" class="form-control" required>
+    <div class="container mt-5">
+        <h2>Iniciar Sesión</h2>
+        <?php if (isset($error)): ?>
+        <div class="alert alert-danger">
+            <?php echo $error; ?>
         </div>
-        <div class="mb-3">
-            <label for="contrasena" class="form-label">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" class="form-control" required>
-        </div>
-        <button type="submit" name="login" class="btn btn-primary">Iniciar Sesión</button>
-        <p></p>
-        <p><a href="crearUsuario.php" class="btn btn-success">Crear Nuevo Usuario</a></p>
-        <p><a href="vuelos.php" class="btn btn-secondary">Crear Vuelo</a></p>
-        <p><a href="Hoteles.php" class="btn btn-secondary">Crear Hotel</a></p>
-
-    </form>
-</div>
+        <?php endif; ?>
+        <form method="post">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col">
+                        <label for="usuario" class="form-label">Usuario:</label>
+                        <input type="text" id="usuario" name="usuario" class="form-control" required>
+                    </div>
+                    <label for="contrasena" class="form-label">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" class="form-control" required>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <button type="submit" name="login" class="btn btn-primary">Iniciar Sesión</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <p><a href="crearUsuario.php" class="btn btn-success">Crear Nuevo Usuario</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <p><a href="vuelos.php" class="btn btn-secondary">Crear Vuelo</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <p><a href="Hoteles.php" class="btn btn-secondary">Crear Hotel</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
 </body>
 </html>
